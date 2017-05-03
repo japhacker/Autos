@@ -1,0 +1,32 @@
+<h1>Agregar Persona</h1>
+
+<form class="form-inline">
+<div ng-controller="PersonaController as pc">
+<div class="form-group">
+    <label>Id</label>
+    <input value="pc.person.Id" ng-model="pc.person.Id" type="text">
+</div>
+<div class="form-group">
+    <label>Nombre</label>
+    <input ng-model="pc.person.Nombre" type="text">
+</div>
+    <label>Apellido_Paterno</label>
+    <input ng-model="pc.person.Apellido_Paterno" type="text">
+<div class="form-group">
+    <label>Apellido_Materno</label>
+    <input ng-model="pc.person.Apellido_Materno" type="text">
+</div>
+    <label>Fecha_de_Nacimiento</label>
+    <input ng-model="pc.person.Fecha_de_Nacimiento" type="date">
+
+    <button ng-click="pc.addPerson()" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">Agregar Persona</button>
+</form>
+
+
+
+
+  
+
+    <!--<p>{{pc.person.Id}}</p>-->
+
+</div>

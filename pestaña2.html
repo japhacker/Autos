@@ -1,0 +1,56 @@
+<h1>Lista de Personas</h1>
+<div ng-controller="PersonaController as pc">
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido_Paterno</th>
+            <th>Apellido_Materno</th>
+            <th>Fecha_de_Nacimiento</th>
+            <th>...</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="persona in pc.obj.Personas">
+                <td>{{persona.Id}}</td>
+                <td>{{persona.Nombre}}</td>
+                <td>{{persona.Apellido_Paterno}}</td>
+                <td>{{persona.Apellido_Materno}}</td>
+                <td>{{persona.Fecha_de_Nacimiento}}</td>
+                <td>
+                    <a ng-href="#" ng-click="pc.personToCoche(persona)" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">Agregar Coche</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <div ng-if="pc.band">
+        <label>Id</label>
+        <input value="pc.coche.Id" ng-model="pc.coche.Id" type="text">
+
+        <label>Id_Persona</label>
+        <input value="pc.coche.Id_Persona" ng-model="pc.coche.Id_Persona" type="text">
+
+        <label>Marca</label>
+        <input ng-model="pc.coche.Marca" type="text">
+
+        <label>Modelo</label>
+        <input ng-model="pc.coche.Modelo" type="text">
+
+        <label>Año</label>
+        <input ng-model="pc.coche.Anio" type="text">
+
+        <label>Color</label>
+        <input ng-model="pc.coche.Color" type="text">
+
+
+        <button ng-click="pc.addCoche()" type="button">Add Coche</button>
+
+    </div>
+
+
+
+
+
+
+</div>

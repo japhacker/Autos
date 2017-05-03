@@ -1,0 +1,50 @@
+<h1>Lista de coches por persona y eliminar</h1>
+
+<div ng-controller="PersonaController as pc">
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido_Paterno</th>
+            <th>Apellido_Materno</th>
+            <th>Fecha_de_Nacimiento</th>
+            <th>...</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="persona in pc.obj.Personas">
+                <td>{{persona.Id}}</td>
+                <td>{{persona.Nombre}}</td>
+                <td>{{persona.Apellido_Paterno}}</td>
+                <td>{{persona.Apellido_Materno}}</td>
+                <td>{{persona.Fecha_de_Nacimiento}}</td>
+                <td>
+                    <a ng-href="#" ng-click="pc.verCoches(persona)" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">Ver Coche</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div ng-if="pc.band2">
+        <table>
+            <thead>
+                <th>Id</th>
+                <th>Id_Persona</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Año</th>
+                <th>Color</th>
+                <th>...</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="coche in pc.obj.Coches | filter:{ Id_Persona: pc.personaBuscar}">
+                    <td>{{coche.Id}}</td>
+                    <td>{{coche.Id_Persona}}</td>
+                    <td>{{coche.Marca}}</td>
+                    <td>{{coche.Modelo}}</td>
+                    <td>{{coche.Anio}}</td>
+                    <td>{{coche.Color}}</td>
+                    <td><a ng-click="pc.eliminarCoche(coche.id) " href="# ">Eliminar</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
